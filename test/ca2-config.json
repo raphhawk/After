@@ -1,0 +1,10 @@
+{
+  "signing": {
+    "profiles": {
+      "client": {
+        "expiry": "8706h",
+        "usages": ["signing", "key encipherment", "client auth"]
+      }
+    }
+  }
+}

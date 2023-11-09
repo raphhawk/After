@@ -1,4 +1,4 @@
-## [] <- [After] <- []
+## 📨 After
 
 ### A Distributed Commit Log
 

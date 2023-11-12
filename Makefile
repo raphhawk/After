@@ -43,8 +43,18 @@ compile:
 		--go-grpc_opt=paths=source_relative \
 		--proto_path=.
 
+.PHONY: clean
+clean:
+	rm -rf $(CONFIG_PATH)
+
+$(CONFIG_PATH)/model.conf:
+	cp test/model.conf $(CONFIG_PATH)/model.conf
+
+$(CONFIG_PATH)/policy.csv:
+	cp test/policy.csv $(CONFIG_PATH)/policy.csv
+
 .PHONY: test
-test:
+test: init gencert $(CONFIG_PATH)/policy.csv $(CONFIG_PATH)/model.conf
 	go test -race ./...
 
 .PHONY: test_clean

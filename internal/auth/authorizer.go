@@ -24,8 +24,8 @@ func (a *Authorizer) Authorize(subject, object, action string) error {
 		msg := fmt.Sprintf(
 			"%s not permitted to %s to %s",
 			subject,
-			object,
 			action,
+			object,
 		)
 		st := status.New(codes.PermissionDenied, msg)
 		return st.Err()
